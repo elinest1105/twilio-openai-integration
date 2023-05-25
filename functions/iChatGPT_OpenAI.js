@@ -23,7 +23,9 @@ exports.handler = async function (context, event, callback) {
     });
     console.log(response.choices[0].message.content);
     append_history(response, "assistant");
+    callback(null, { response: response.choices[0].text });
   } catch (error) {
     console.error("Error in chat completion:", error);
+    callback(error);
   }
 };
