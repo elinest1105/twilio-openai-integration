@@ -132,4 +132,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-/service-account.json
+/twilio-openai-d6a44-firebase-adminsdk-vde5o-1cefa4723e.json
