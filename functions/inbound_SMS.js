@@ -9,8 +9,6 @@ exports.handler = async function (context, event, callback) {
     const userDoc = await userRef.get();
     if (userDoc.exists && userDoc.data().status === "active") {
       // Call iChatGPT_OpenAI function with the message.
-      const openaiFunction = Runtime.getFunctions()["iChatGPT_OpenAI"];
-      const openaiFunctionPath = openaiFunction.path;
       const openaiHandler = require("./iChatGPT_OpenAI").handler;
 
       openaiHandler(context, { message: event.Body }, (error, result) => {
